@@ -3,23 +3,17 @@ using SpecsFor;
 
 namespace LocalDbApi.UnitTests.Instance
 {
-    public class when_testing_delete : SpecsFor<LocalDbApi.Instance>
+    public class when_testing_stop_instance : SpecsFor<LocalDbApi.Instance>
     {
         protected override void When()
         {
-            SUT.Delete("SimonTest");
+            SUT.StopInstance("SimonTest");
         }
 
         [Test]
         public void then_command_line_should_be_called_with_stop_command()
         {
             GetMockFor<ICommandLine>().Verify(x => x.Execute("stop SimonTest"));
-        }
-
-        [Test]
-        public void then_command_line_should_be_called_with_delete_command()
-        {
-            GetMockFor<ICommandLine>().Verify(x => x.Execute("delete SimonTest"));
         }
     }
 }

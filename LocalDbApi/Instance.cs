@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace LocalDbApi
+﻿namespace LocalDbApi
 {
     public class Instance
     {
@@ -18,23 +16,31 @@ namespace LocalDbApi
             string arguments = string.Concat("create ", instanceName);
 
             Command.Execute(arguments);
+
+            StartInstance(instanceName);
         }
 
         public void Delete(string instanceName)
         {
+            StopInstance(instanceName);
+
             string arguments = string.Concat("delete ", instanceName);
 
             Command.Execute(arguments);
         }
 
-        public void Info()
+        public void StartInstance(string instanceName)
         {
-            const string arguments = "info";
+            string arguments = string.Concat("start ", instanceName);
 
-            foreach (var argument in Command.ExecuteList(arguments))
-            {
-                Debug.WriteLine(argument);
-            }
+            Command.Execute(arguments);
+        }
+
+        public void StopInstance(string instanceName)
+        {
+            string arguments = string.Concat("stop ", instanceName);
+
+            Command.Execute(arguments);
         }
     }
 }

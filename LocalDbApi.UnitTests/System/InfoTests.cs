@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using SpecsFor;
 
-namespace LocalDbApi.UnitTests.Instance
+namespace LocalDbApi.UnitTests.System
 {
-    public class when_testing_info : SpecsFor<LocalDbApi.Instance>
+    public class when_testing_info : SpecsFor<LocalDbApi.System>
     {
         protected override void When()
         {
