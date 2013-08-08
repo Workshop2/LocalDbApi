@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace LocalDbApi
 {
-    internal class CommandLine
+    internal class CommandLine : ICommandLine
     {
         private const string ActionName = "SqlLocalDb";
         private ProcessStartInfo Command { get; set; }

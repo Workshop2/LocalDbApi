@@ -4,28 +4,34 @@ namespace LocalDbApi
 {
     public class Instance
     {
+        private ICommandLine Command { get; set; }
+
+        public Instance() : this(new CommandLine()) {}
+
+        public Instance(ICommandLine command)
+        {
+            Command = command;
+        }
+        
         public void Create(string instanceName)
         {
-            CommandLine commandLine = new CommandLine();
             string arguments = string.Concat("create ", instanceName);
 
-            commandLine.Execute(arguments);
+            Command.Execute(arguments);
         }
 
         public void Delete(string instanceName)
         {
-            CommandLine commandLine = new CommandLine();
             string arguments = string.Concat("delete ", instanceName);
 
-            commandLine.Execute(arguments);
+            Command.Execute(arguments);
         }
 
         public void Info()
         {
-            CommandLine commandLine = new CommandLine();
-            string arguments = "info";
+            const string arguments = "info";
 
-            foreach (var argument in commandLine.ExecuteList(arguments))
+            foreach (var argument in Command.ExecuteList(arguments))
             {
                 Debug.WriteLine(argument);
             }
