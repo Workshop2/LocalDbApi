@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Instance\CreateTests.cs" />
+    <Compile Include="Instance\DeleteTests.cs" />
+    <Compile Include="Instance\InfoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
