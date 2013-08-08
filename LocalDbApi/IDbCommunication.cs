@@ -2,7 +2,7 @@
 
 namespace LocalDbApi
 {
-    public interface ICommandLine
+    public interface IDbCommunication
     {
         void Execute(string arguments);
         string ExecuteString(string arguments);

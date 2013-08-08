@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace LocalDbApi
+namespace LocalDbApi.Communications
 {
-    internal class CommandLine : ICommandLine
+    internal class DbCommunication : IDbCommunication
     {
         private const string ActionName = "SqlLocalDb";
         private ProcessStartInfo Command { get; set; }
 
-        public CommandLine()
+        public DbCommunication()
         {
             Command = new ProcessStartInfo
             {

@@ -1,12 +1,14 @@
-﻿namespace LocalDbApi
+﻿using LocalDbApi.Communications;
+
+namespace LocalDbApi
 {
     public class Instance
     {
-        private ICommandLine Command { get; set; }
+        private IDbCommunication Command { get; set; }
 
-        public Instance() : this(new CommandLine()) {}
+        public Instance() : this(new DbCommunication()) {}
 
-        public Instance(ICommandLine command)
+        public Instance(IDbCommunication command)
         {
             Command = command;
         }

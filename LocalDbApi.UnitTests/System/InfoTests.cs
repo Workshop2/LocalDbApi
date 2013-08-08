@@ -13,7 +13,7 @@ namespace LocalDbApi.UnitTests.System
         [Test]
         public void then_command_line_should_be_called_with_info_command()
         {
-            GetMockFor<ICommandLine>().Verify(x => x.ExecuteList("info"));
+            GetMockFor<IDbCommunication>().Verify(x => x.ExecuteList("info"));
         }
     }
 }

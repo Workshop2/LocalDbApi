@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using LocalDbApi.Communications;
 using LocalDbApi.Models;
 
 namespace LocalDbApi
 {
     public class System
     {
-        private ICommandLine Command { get; set; }
+        private IDbCommunication Command { get; set; }
 
-        public System() : this(new CommandLine()) {}
+        public System() : this(new DbCommunication()) {}
 
-        public System(ICommandLine command)
+        public System(IDbCommunication command)
         {
             Command = command;
         }
