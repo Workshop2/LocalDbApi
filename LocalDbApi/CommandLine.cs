@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 
 namespace LocalDbApi
 {
@@ -14,18 +13,38 @@ namespace LocalDbApi
             Command = new ProcessStartInfo
             {
                 WindowStyle = ProcessWindowStyle.Hidden,
-                FileName = Path.Combine(Environment.SystemDirectory, "cmd.exe")
+                FileName = ActionName,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
             };
         }
 
         public void Execute(string arguments)
         {
-            Command.Arguments = string.Concat("/C ", ActionName, " ", arguments);
+            ExecuteString(arguments);
+        }
+
+        public string ExecuteString(string arguments)
+        {
+            Command.Arguments = arguments;
 
             using (var process = new Process())
             {
+                process.StartInfo = Command;
                 process.Start();
                 process.WaitForExit();
+
+                return process.StandardOutput.ReadToEnd();
+            }
+        }
+
+        public IEnumerable<string> ExecuteList(string arguments)
+        {
+            string outPut = ExecuteString(arguments);
+            foreach (var result in outPut.Split('\n'))
+            {
+                yield return result;
             }
         }
     }

@@ -7,6 +7,7 @@ namespace LocalDbApi.UnitTests.Instance
     {
         protected override void When()
         {
+            SUT.Info();
             SUT.Create("SimonTest");
         }
 
