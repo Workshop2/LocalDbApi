@@ -41,10 +41,17 @@ namespace LocalDbApi
 
         public IEnumerable<string> ExecuteList(string arguments)
         {
-            string outPut = ExecuteString(arguments);
-            foreach (var result in outPut.Split('\n'))
+            Command.Arguments = arguments;
+
+            using (var process = new Process())
             {
-                yield return result;
+                process.StartInfo = Command;
+                process.Start();
+
+                while (!process.StandardOutput.EndOfStream)
+                {
+                    yield return process.StandardOutput.ReadLine();
+                }
             }
         }
     }

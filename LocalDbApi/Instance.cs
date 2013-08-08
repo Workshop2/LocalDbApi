@@ -1,4 +1,6 @@
-﻿namespace LocalDbApi
+﻿using System.Diagnostics;
+
+namespace LocalDbApi
 {
     public class Instance
     {
@@ -23,7 +25,10 @@
             CommandLine commandLine = new CommandLine();
             string arguments = "info";
 
-            commandLine.Execute(arguments);
+            foreach (var argument in commandLine.ExecuteList(arguments))
+            {
+                Debug.WriteLine(argument);
+            }
         }
     }
 }
