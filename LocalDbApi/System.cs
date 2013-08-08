@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using LocalDbApi.Models;
 
 namespace LocalDbApi
 {
@@ -21,6 +24,15 @@ namespace LocalDbApi
             {
                 Debug.WriteLine(argument);
             }
+        }
+
+        public Info Info(string instanceName)
+        {
+            string arguments = string.Concat("info ", instanceName);
+
+            List<string> instanceInfo = Command.ExecuteList(arguments).ToList();
+            
+            return new Info(instanceInfo);
         }
          
     }
