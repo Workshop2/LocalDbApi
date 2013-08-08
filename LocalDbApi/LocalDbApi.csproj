@@ -39,9 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISqlDbCommunication.cs" />
+    <Compile Include="IDbCommunication.cs" />
     <Compile Include="Instance.cs" />
-    <Compile Include="Communications\SqlDbCommunication.cs" />
+    <Compile Include="Communications\DbCommunication.cs" />
     <Compile Include="Models\Info.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
