@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CommandLineExtensions.cs" />
     <Compile Include="IDbCommunication.cs" />
     <Compile Include="Instance.cs" />
     <Compile Include="Communications\DbCommunication.cs" />

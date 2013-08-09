@@ -1,4 +1,5 @@
 ﻿using LocalDbApi.Communications;
+using LocalDbApi.Extensions;
 
 namespace LocalDbApi
 {
@@ -15,6 +16,7 @@ namespace LocalDbApi
         
         public void Create(string instanceName)
         {
+            instanceName = instanceName.ToCommandLineArgument();
             string arguments = string.Concat("create ", instanceName);
 
             Command.Execute(arguments);
