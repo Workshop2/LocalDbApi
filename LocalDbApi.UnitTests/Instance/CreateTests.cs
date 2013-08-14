@@ -14,13 +14,7 @@ namespace LocalDbApi.UnitTests.Instance
         [Test]
         public void then_command_line_should_be_called_with_create_command()
         {
-            GetMockFor<IDbCommunication>().Verify(x => x.Execute("create SimonTest"));
-        }
-
-        [Test]
-        public void then_command_line_should_be_called_with_start_command()
-        {
-            GetMockFor<IDbCommunication>().Verify(x => x.Execute("start SimonTest"));
+            GetMockFor<IDbCommunication>().Verify(x => x.Execute("create SimonTest -s"));
         }
     }
 }

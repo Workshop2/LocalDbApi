@@ -16,11 +16,9 @@ namespace LocalDbApi
         
         public void Create(string instanceName)
         {
-            string arguments = string.Concat("create ", instanceName);
+            string arguments = string.Concat("create ", instanceName, " -s");
 
             Command.Execute(arguments);
-
-            StartInstance(instanceName);
         }
 
         public void Delete(string instanceName)
