@@ -45,7 +45,6 @@
     <Compile Include="Models\Info.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

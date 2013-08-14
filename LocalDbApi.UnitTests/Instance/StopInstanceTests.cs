@@ -3,6 +3,7 @@ using SpecsFor;
 
 namespace LocalDbApi.UnitTests.Instance
 {
+    [TestFixture]
     public class when_testing_stop_instance : SpecsFor<LocalDbApi.Instance>
     {
         protected override void When()

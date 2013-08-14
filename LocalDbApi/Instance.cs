@@ -1,4 +1,5 @@
-﻿using LocalDbApi.Communications;
+﻿using System.Collections.Generic;
+using LocalDbApi.Communications;
 
 namespace LocalDbApi
 {
@@ -43,6 +44,13 @@ namespace LocalDbApi
             string arguments = string.Concat("stop ", instanceName);
 
             Command.Execute(arguments);
+        }
+
+        public IEnumerable<string> ListInstances()
+        {
+            const string arguments = "info";
+
+            return Command.ExecuteList(arguments);
         }
     }
 }
