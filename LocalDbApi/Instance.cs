@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using LocalDbApi.Communications;
+using LocalDbApi.Models;
 
 namespace LocalDbApi
 {
@@ -49,6 +51,15 @@ namespace LocalDbApi
             const string arguments = "info";
 
             return Command.ExecuteList(arguments);
+        }
+
+        public Info GetInstance(string instanceName)
+        {
+            string arguments = string.Concat("info ", instanceName);
+
+            List<string> instanceRawInfo = Command.ExecuteList(arguments).ToList();
+
+            return new Info(instanceRawInfo);
         }
     }
 }
