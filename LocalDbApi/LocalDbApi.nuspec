@@ -8,8 +8,9 @@
     <owners>$author$</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Added GetInstance feature and removed System object.</releaseNotes>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>LocalDb Local Db Sql</tags>
+	<projectUrl>http://github.com/Workshop2/LocalDbApi/</projectUrl>
   </metadata>
 </package>
