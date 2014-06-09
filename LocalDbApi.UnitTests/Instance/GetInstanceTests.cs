@@ -23,7 +23,7 @@ namespace LocalDbApi.UnitTests.Instance
                 @"Owner:            MyName\AnotherName",
                 "Auto-create:       Yes",
                 "State:             Running",
-                "Last start time:   07/08/2013 06:05:04",
+                "Last start time:   " + new DateTime(2013, 08, 07, 06, 05, 04),
                 "Instance pipe name:This is my pipe name",
             };
 
