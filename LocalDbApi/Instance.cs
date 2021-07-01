@@ -46,6 +46,23 @@ namespace LocalDbApi
             Command.Execute(arguments);
         }
 
+        public void ShareInstance(string instanceName, string sharedName)
+        {
+            string[] args = new string[3]
+            {
+                instanceName," ", sharedName
+            };
+            string arguments = string.Concat("share ", string.Concat(args));
+            Command.Execute(arguments);
+        }
+
+        public void UnShareInstance(string instanceSharedName)
+        {
+            string arguments = string.Concat("unshare ", instanceSharedName);
+
+            Command.Execute(arguments);
+        }
+
         public IEnumerable<string> ListInstances()
         {
             const string arguments = "info";
