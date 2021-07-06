@@ -8,10 +8,11 @@
     <Description>A small wrapper for LocalDb - using command line stuff. Can be used for creating and maintaining LocalDb instances. Super light and really simple - just a nice wrapper...</Description>
     <Version>2.0.0</Version>
     <Company>Simon Colmer</Company>
-    <Copyright>Copyright © 2018</Copyright>
+    <Copyright>Copyright © 2021</Copyright>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
     <LangVersion>7.1</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 </Project>
