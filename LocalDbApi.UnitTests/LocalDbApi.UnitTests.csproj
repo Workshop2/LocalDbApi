@@ -63,10 +63,12 @@
   <ItemGroup>
     <Compile Include="Instance\GetInstanceTests.cs" />
     <Compile Include="Instance\ListTests.cs" />
+    <Compile Include="Instance\ShareInstanceTests.cs" />
     <Compile Include="Instance\StopInstanceTests.cs" />
     <Compile Include="Instance\StartInstanceTests.cs" />
     <Compile Include="Instance\CreateTests.cs" />
     <Compile Include="Instance\DeleteTests.cs" />
+    <Compile Include="Instance\UnShareInstanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

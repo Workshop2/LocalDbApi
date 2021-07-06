@@ -48,11 +48,8 @@ namespace LocalDbApi
 
         public void ShareInstance(string instanceName, string sharedName)
         {
-            string[] args = new string[3]
-            {
-                instanceName," ", sharedName
-            };
-            string arguments = string.Concat("share ", string.Concat(args));
+            string arguments = string.Concat("share ", instanceName, " ", sharedName);
+            
             Command.Execute(arguments);
         }
 
